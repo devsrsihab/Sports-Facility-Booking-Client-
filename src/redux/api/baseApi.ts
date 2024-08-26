@@ -11,7 +11,7 @@ import { logout, setuser } from "../features/auth/authSlice";
 import { toast } from "sonner";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:7000/api/v1",
+  baseUrl: "http://localhost:8000/api/v1",
 
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
@@ -34,19 +34,19 @@ const baseQueryWithReferenceToken: BaseQueryFn<
   let result = await baseQuery(args, api, extraOptions);
   const toastId = 3123213;
 
-  if (result?.error?.status === 404) {
-    toast.error("User not found", { id: toastId, duration: 1000 });
-  }
-
   const state = api.getState() as RootState;
   const user = state.auth.user;
   const token = state.auth.token;
+
+  if (result?.error?.status === 404 && user && token) {
+    toast.error("User not found", { id: toastId, duration: 1000 });
+  }
 
   if (result?.error?.status === 401 && user && token) {
     console.log("sending refresh token");
 
     //*send the refresh token req
-    const res = await fetch("http://localhost:7000/api/v1/auth/refresh-token", {
+    const res = await fetch("http://localhost:8000/api/v1/auth/refresh-token", {
       method: "POST",
       credentials: "include",
     });
@@ -57,7 +57,7 @@ const baseQueryWithReferenceToken: BaseQueryFn<
       api.dispatch(setuser({ user, token: data?.accessToken }));
       result = await baseQuery(args, api, extraOptions);
     } else {
-      console.log('base api logout');
+      console.log("base api logout");
       api.dispatch(logout());
     }
   }

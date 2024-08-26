@@ -10,9 +10,9 @@ const menus = [
     path: "/",
   },
   {
-    key: "borrowed",
-    label: `Borrowings`,
-    path: "/borrowed",
+    key: "about",
+    label: `About`,
+    path: "/about",
   },
   {
     key: "books",

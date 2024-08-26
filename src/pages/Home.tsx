@@ -1,20 +1,17 @@
-import Categories from "../components/home/Category/Categories";
+import BenefitSections from "../components/home/BenefitSections";
+import FeaturedSection from "../components/home/FeaturedSection";
 import HeroSection from "../components/home/HeroSection";
-import NewArrivals from "../components/home/NewArrivals/NewArrivals";
-import PopularBooks from "../components/home/PopularBooks/PopularBooks";
-import RecentlyViews from "../components/home/RecentlyViewed/RecentlyViews";
-import Container from "../components/shared/Container";
+import HowItWorkSection from "../components/home/HowItWorkSection";
+import Testmonials from "../components/home/Testimonial/Testmonials";
 
 const Home = () => {
   return (
     <>
-      <Container>
-        <HeroSection />
-        <NewArrivals />
-        <Categories />
-        <PopularBooks/>
-        <RecentlyViews/>
-      </Container>
+      <HeroSection />
+      <FeaturedSection />
+      <HowItWorkSection />
+      <Testmonials />
+      <BenefitSections />
     </>
   );
 };

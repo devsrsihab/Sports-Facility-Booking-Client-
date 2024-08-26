@@ -1,21 +1,31 @@
-img{
+img {
   width: 100%;
   max-width: 100%;
+  height: auto;
 }
-.custom-carousel .slick-prev, .custom-carousel .slick-next {
-    position: absolute;
-    width: 30px;
-    height: 60px;
-    background-color: white;
-    color: #34495e;
-    box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, .3);
-    text-align: center;
-    z-index: 1;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
+.custom-carousel .slick-prev,
+.custom-carousel .slick-next {
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background-color: white;
+  color: #34495e;
+  box-shadow: -2px 2px 12px -2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
 }
+
+.testimonail_carausel .slick-dots li button {
+  background-color: black; /* Change this to your desired color */
+}
+.testimonail_carausel .slick-dots li.slick-active button {
+  background-color: #f2a922; /* Change this to your desired active color */
+}
+
 
 :where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-prev::after {
   transform: rotate(-45deg);
