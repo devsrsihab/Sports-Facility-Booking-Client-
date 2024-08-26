@@ -15,9 +15,9 @@ const menus = [
     path: "/about",
   },
   {
-    key: "books",
-    label: `Books`,
-    path: "/books",
+    key: "contact",
+    label: `Conttact`,
+    path: "/contact",
   },
   {
     key: "register",

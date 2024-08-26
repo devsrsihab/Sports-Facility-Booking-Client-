@@ -3,7 +3,7 @@ import ArchiveCategory from "../pages/ArchiveCategory";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import BookDetails from "../pages/BookDetails";
-import BookPage from "../pages/BookPage";
+import ContactUs from "../pages/ContactUs";
 import Home from "../pages/Home";
 
 export const webPaths = [
@@ -16,8 +16,8 @@ export const webPaths = [
     element: <About />,
   },
   {
-    path: "/books",
-    element: <BookPage />,
+    path: "/contact",
+    element: <ContactUs />,
   },
   {
     path: "/books/:id",
