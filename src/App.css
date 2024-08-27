@@ -37,3 +37,11 @@ img {
 :where(.css-dev-only-do-not-override-m4timi).ant-carousel .slick-next::after {
   position: static;
 }
+
+.custom-carousel .slick-slide {
+  margin-right: 16px; /* Adjust the spacing here */
+}
+
+.custom-carousel .slick-list {
+  margin-right: -16px; /* Compensate for the last item's margin */
+}

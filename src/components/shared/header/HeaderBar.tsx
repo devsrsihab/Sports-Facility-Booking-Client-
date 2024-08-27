@@ -10,13 +10,18 @@ const menus = [
     path: "/",
   },
   {
+    key: "facilities",
+    label: `Facility`,
+    path: "/facilities",
+  },
+  {
     key: "about",
     label: `About`,
     path: "/about",
   },
   {
     key: "contact",
-    label: `Conttact`,
+    label: `Contt`,
     path: "/contact",
   },
   {

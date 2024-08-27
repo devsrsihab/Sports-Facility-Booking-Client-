@@ -1,28 +1,16 @@
 import howItWorkImg from "../../assets/img/how-it-work.png"
+import SectionHeader from "../shared/SectionHeader";
 
 const HowItWorkSection = () => {
   return (
-    <section
-      data-section-id={1}
-      data-share=""
-      data-category="how-it-works"
-      data-component-id="eb023c5f_04_awz"
-      className="pt-24 pb-36 bg-white overflow-hidden"
-    >
+    <section className="py-24 bg-white overflow-hidden">
       <div className="container px-4 mx-auto">
-        <h2
-          className="mb-7 text-6xl md:text-8xl xl:text-10xl text-center font-bold font-heading tracking-px-n leading-none"
-          data-config-id="txt-a4bc41-1"
-        >
-          Let’s see how it works
-        </h2>
-        <p
-          className="mb-20 font-sans text-lg text-gray-900 text-center md:max-w-lg mx-auto"
-          data-config-id="txt-a4bc41-5"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          varius enim in eros elemen tum.
-        </p>
+        <SectionHeader
+          title="How It Works"
+          subTitle="How Work"
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia alias eius assumenda culpa?"
+        />
+
         <div
           className="relative bg-no-repeat bg-center bg-cover bg-fixed overflow-hidden rounded-4xl"
           style={{

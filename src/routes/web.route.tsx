@@ -4,6 +4,7 @@ import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import BookDetails from "../pages/BookDetails";
 import ContactUs from "../pages/ContactUs";
+import Facilities from "../pages/Facilities";
 import Home from "../pages/Home";
 
 export const webPaths = [
@@ -18,6 +19,10 @@ export const webPaths = [
   {
     path: "/contact",
     element: <ContactUs />,
+  },
+  {
+    path: "/facilities",
+    element: <Facilities />,
   },
   {
     path: "/books/:id",

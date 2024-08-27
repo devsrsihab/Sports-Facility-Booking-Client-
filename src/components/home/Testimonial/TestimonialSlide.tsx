@@ -16,7 +16,7 @@ const TestimonialSlide = ({
   return (
     <div
       x-ref="slide1"
-      className="w-full max-w-lg md:max-w-4xl px-4 flex-shrink-0"
+      className="w-full max-w-lg md:max-w-4xl flex-shrink-0"
     >
       <div className="px-6 py-12 xs:pl-12 xs:pr-14 bg-yellow-50 rounded-3xl">
         <div className="flex flex-wrap -mx-4">

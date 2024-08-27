@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import { TCategoryProps } from "../../../types";
-import { nameShorter } from "../../../utils/nameShorter";
+import { titleShorter } from "../../../utils/titleShorter";
 
 const Category: React.FC<TCategoryProps> = ({ category }) => {
   // cat name to slug
   const formatCategoryName = (name: string) => {
     return name.trim().toLowerCase().replace(/ /g, "-");
   };
-
-
 
   return (
     <Link to={`/category/${formatCategoryName(category.name)}`}>
@@ -27,7 +25,7 @@ const Category: React.FC<TCategoryProps> = ({ category }) => {
           <div className="flex-1">
             <span className="mt-2 block">
               <p className="text-sm capitalize font-semibold text-gray-900">
-                {nameShorter(category.name)}
+                {titleShorter(category.name)}
               </p>
             </span>
           </div>

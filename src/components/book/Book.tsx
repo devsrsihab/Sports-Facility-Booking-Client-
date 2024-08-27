@@ -2,7 +2,7 @@ import { TBooksProps } from "../../types";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import AddToBorrow from "../shared/AddToBorrow";
-import { nameShorter } from "../../utils/nameShorter";
+import { titleShorter } from "../../utils/titleShorter";
 
 const Book: React.FC<TBooksProps> = ({ book }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,7 +31,7 @@ const Book: React.FC<TBooksProps> = ({ book }) => {
           <h3 className="text-sm font-medium text-gray-900">
             <Link to={`/books/${book._id}`}>
               <span aria-hidden="true" className="absolute inset-0" />
-              {nameShorter(book.name)}
+              {titleShorter(book.name)}
             </Link>
           </h3>
           <a
