@@ -21,7 +21,7 @@ const menus = [
   },
   {
     key: "contact",
-    label: `Contt`,
+    label: `Contact`,
     path: "/contact",
   },
   {

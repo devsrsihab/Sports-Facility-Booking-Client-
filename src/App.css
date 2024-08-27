@@ -39,9 +39,9 @@ img {
 }
 
 .custom-carousel .slick-slide {
-  margin-right: 16px; /* Adjust the spacing here */
+  margin-right: 18px; /* Adjust the spacing here */
 }
 
 .custom-carousel .slick-list {
-  margin-right: -16px; /* Compensate for the last item's margin */
+  margin-right: -18px; /* Compensate for the last item's margin */
 }

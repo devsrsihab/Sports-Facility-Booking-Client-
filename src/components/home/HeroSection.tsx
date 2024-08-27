@@ -18,7 +18,7 @@ const HeroSection = () => {
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
               <div className="hidden sm:mb-10 sm:flex">
                 <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                  Discover a world of knowledge at your fingertips.{" "}
+                  Book your favorite sports facilities with ease.{" "}
                   <a
                     href="#"
                     className="whitespace-nowrap font-semibold text-indigo-600"
@@ -29,19 +29,19 @@ const HeroSection = () => {
                 </div>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Your Gateway to Endless Learning
+                Your Ultimate Sports Booking Platform
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Access thousands of books, journals, and digital resources.
-                Whether you're researching, reading for pleasure, or seeking
-                knowledge, our library is here to support your journey.
+                Reserve courts, fields, and gyms for your favorite sports.
+                Whether you're playing basketball, tennis, or soccer, find the
+                perfect spot and time for your game.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
                   to="/books"
                   className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Start Exploring
+                  Book Now
                 </Link>
                 <Link
                   to="/register"
