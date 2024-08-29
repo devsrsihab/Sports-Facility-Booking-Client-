@@ -1,3 +1,9 @@
+import brandImg1 from "../../assets/img/brand/Brand (1).svg"
+import brandImg2 from "../../assets/img/brand/Brand (2).svg"
+import brandImg3 from "../../assets/img/brand/Brand (3).svg"
+import brandImg4 from "../../assets/img/brand/Brand (4).svg"
+import brandImg5 from "../../assets/img/brand/Brand (5).svg"
+
 const Brands = () => {
   return (
     <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
@@ -14,35 +20,35 @@ const Brands = () => {
         <div className="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5">
           <img
             alt="Transistor"
-            src="https://tailwindui.com/img/logos/158x48/transistor-logo-white.svg"
+            src={brandImg1}
             width={158}
             height={48}
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
           />
           <img
             alt="Reform"
-            src="https://tailwindui.com/img/logos/158x48/reform-logo-white.svg"
+            src={brandImg2}
             width={158}
             height={48}
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
           />
           <img
             alt="Tuple"
-            src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg"
+            src={brandImg3}
             width={158}
             height={48}
             className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
           />
           <img
             alt="SavvyCal"
-            src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg"
+            src={brandImg4}
             width={158}
             height={48}
             className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
           />
           <img
             alt="Statamic"
-            src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg"
+            src={brandImg5}
             width={158}
             height={48}
             className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"

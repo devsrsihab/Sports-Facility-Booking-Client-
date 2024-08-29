@@ -2,7 +2,7 @@ import About from "../pages/About";
 import ArchiveCategory from "../pages/ArchiveCategory";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
-import BookDetails from "../pages/BookDetails";
+import FacilitieDetails from "../pages/FacilitieDetails";
 import ContactUs from "../pages/ContactUs";
 import Facilities from "../pages/Facilities";
 import Home from "../pages/Home";
@@ -25,8 +25,8 @@ export const webPaths = [
     element: <Facilities />,
   },
   {
-    path: "/books/:id",
-    element: <BookDetails />,
+    path: "/facilities/:id",
+    element: <FacilitieDetails />,
   },
   {
     path: "/category/:catname",

@@ -1,39 +1,41 @@
+import teamImg1 from "../../assets/img/team/team (1).avif"
+import teamImg2 from "../../assets/img/team/team (2).avif"
+import teamImg3 from "../../assets/img/team/team (3).avif"
+import teamImg4 from "../../assets/img/team/team (4).avif"
+import teamImg5 from "../../assets/img/team/team (5).avif"
+import teamImg6 from "../../assets/img/team/team (6).jpeg"
+
+
 const team = [
   {
     name: "Michael Foster",
     role: "Co-Founder / CTO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: teamImg1,
   },
   {
     name: "Sarah Williams",
     role: "CEO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: teamImg2,
   },
   {
     name: "David Kim",
     role: "Chief Marketing Officer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: teamImg3,
   },
   {
     name: "Emily Brown",
     role: "Head of Product",
-    imageUrl:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=faces&fit=crop&w=1024&h=1024&q=80",
+    imageUrl: teamImg4,
   },
   {
     name: "James Anderson",
     role: "Lead Developer",
-    imageUrl:
-      "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: teamImg5,
   },
   {
     name: "Olivia Harris",
     role: "Customer Success Manager",
-    imageUrl:
-      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: teamImg6,
   },
 ];
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import homeHero from "../../assets/img/home/homeHero.avif"
 const HeroSection = () => {
   return (
     <div className="relative bg-white">
@@ -57,7 +57,7 @@ const HeroSection = () => {
       <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-          src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?w=1920&auto=format"
+          src={homeHero}
           alt="Library Image"
         />
       </div>
