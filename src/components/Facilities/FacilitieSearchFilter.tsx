@@ -40,8 +40,10 @@ const FacilitieSearchFilter = ({
     }
 
     if (searchTerm) {
-      filteredFacilities = filteredFacilities.filter((venue: any) =>
-        venue.name.toLowerCase().includes(searchTerm.toLowerCase())
+      filteredFacilities = filteredFacilities.filter(
+        (venue: any) =>
+          venue.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          venue.location.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
