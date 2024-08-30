@@ -37,6 +37,20 @@ const bookApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getAvailabeFacilitieSlot: builder.query({
+      query: (args) => {
+        return {
+          url: `/facilities/check-availability?date=${args.date}&facility=${args.facility}`,
+          method: "GET",
+        };
+      },
+      transformResponse: (response: TResponseRedux<any>) => {
+        return {
+          data: response.data,
+        };
+      },
+    }),
+
     // getAllBookByCategory: builder.query({
     //   query: (catname) => ({
     //     url: `/books/bookebycat/${catname}`,
@@ -49,5 +63,6 @@ const bookApi = baseApi.injectEndpoints({
 export const {
   // all get routes
   useGetAllFacilitieQuery,
-  useGetSingleFacilitieQuery
+  useGetSingleFacilitieQuery, 
+  useGetAvailabeFacilitieSlotQuery
 } = bookApi;

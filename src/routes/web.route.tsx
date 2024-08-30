@@ -6,6 +6,8 @@ import FacilitieDetails from "../pages/FacilitieDetails";
 import ContactUs from "../pages/ContactUs";
 import Facilities from "../pages/Facilities";
 import Home from "../pages/Home";
+import Booking from "../pages/Booking";
+import ProtectedRoute from "../components/layout/ProtectedRoute";
 
 export const webPaths = [
   {
@@ -31,6 +33,14 @@ export const webPaths = [
   {
     path: "/category/:catname",
     element: <ArchiveCategory />,
+  },
+  {
+    path: "/booking/:id",
+    element: (
+      <ProtectedRoute>
+        <Booking />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/register",
