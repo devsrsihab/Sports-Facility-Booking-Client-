@@ -1,114 +1,103 @@
-import { Button, Table } from "antd";
-import type { TableColumnsType, TableProps } from "antd";
-import { useGetAllSemesterQuery } from "../../../redux/features/admin/academicManagement.Api";
-import { TAcademicSemester, TQueryParams } from "../../../types";
-import { SetStateAction, useState } from "react";
+import { Button, Pagination, Table } from "antd";
+import type { TableColumnsType } from "antd";
+import { useState } from "react";
+import { useGetAllFacilitieQuery } from "../../../redux/features/facilitie/facilitieApi";
+import { TFacilitie } from "../../../types/facilitie.type";
+import FacilitieConfirmationModal from "../../../components/Facilities/FacilitieConfirmationModal";
+
 const Facilities = () => {
-  const [params, setParams] = useState<TQueryParams[] | undefined>([]);
-  const { data: semesterData, isFetching } = useGetAllSemesterQuery(params);
+  const [openReturn, setOpenReturn] = useState(false);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+
+  const { data: facilitieData, isFetching } = useGetAllFacilitieQuery([
+    { name: "limit", value: 5 },
+    { name: "page", value: page },
+  ]);
 
   type TTableData = Pick<
-    TAcademicSemester,
-    "name" | "_id" | "year" | "startMonth" | "endMonth"
+    TFacilitie,
+    "name" | "_id" | "location" | "pricePerHour" | "availableSlots"
   >;
 
-  const tableData = semesterData?.data?.map(
-    ({ _id, name, year, startMonth, endMonth }) => ({
+  const tableData = facilitieData?.data?.map(
+    ({ _id, name, location, pricePerHour, availableSlots }) => ({
       _id,
       name,
-      year,
-      startMonth,
-      endMonth,
+      location,
+      pricePerHour,
+      availableSlots,
     })
   );
+  const metaData = facilitieData?.meta;
 
   const columns: TableColumnsType<TTableData> = [
     {
       title: "Name",
       key: "name",
       dataIndex: "name",
-      showSorterTooltip: { target: "full-header" },
-      filters: [
-        {
-          text: "Autumn",
-          value: "Autumn",
-        },
-        {
-          text: "Summer",
-          value: "Summer",
-        },
-        {
-          text: "Fall",
-          value: "Fall",
-        },
-      ],
     },
     {
-      title: "Year",
-      key: "year",
-      dataIndex: "year",
-      filters: [
-        { text: "2025", value: "2025" },
-        { text: "2026", value: "2026" },
-        { text: "2027", value: "2027" },
-        { text: "2028", value: "2028" },
-        { text: "2029", value: "2029" },
-        { text: "2030", value: "2030" },
-        { text: "2031", value: "2031" },
-        { text: "2032", value: "2032" },
-        { text: "2033", value: "2033" },
-        { text: "2034", value: "2034" },
-        { text: "2035", value: "2035" },
-      ],
+      title: "Location",
+      key: "location",
+      dataIndex: "location",
     },
     {
-      title: "Start Month",
-      key: "startMonth",
-      dataIndex: "startMonth",
+      title: "Price Per Hour",
+      key: "pricePerHour",
+      dataIndex: "pricePerHour",
     },
     {
-      title: "End Month",
-      key: "endMonth",
-      dataIndex: "endMonth",
+      title: "Available Slots",
+      key: "availableSlots",
+      dataIndex: "availableSlots",
     },
     {
       title: "Action",
       key: "x",
-      render: () => (
-        <div>
-          <Button>Update</Button>
+      render: (item) => (
+        <div className="flex gap-2">
+          <Button className="bg-blue-500 text-white">Edit</Button>
+          <Button
+            onClick={() => {
+              setSelectedId(item._id);
+              setOpenReturn(true);
+            }}
+            className="bg-red-500 text-white"
+          >
+            Delete
+          </Button>
+          {selectedId === item._id && (
+            <FacilitieConfirmationModal
+              id={item._id}
+              openReturn={openReturn}
+              setOpenReturn={setOpenReturn}
+            />
+          )}
         </div>
       ),
     },
   ];
 
-  const onChange: TableProps<TTableData>["onChange"] = (
-    _pagination,
-    filters,
-    _sorter,
-    extra
-  ) => {
-    if (extra.action === "filter") {
-      const queryParams: SetStateAction<TQueryParams[] | undefined> = [];
-      filters.name?.forEach((item) =>
-        queryParams.push({ name: "name", value: item })
-      );
-      filters.year?.forEach((item) =>
-        queryParams.push({ name: "year", value: item })
-      );
-      setParams(queryParams);
-    }
-  };
-
   return (
-    <Table
-      loading={isFetching}
-      columns={columns}
-      dataSource={tableData}
-      rowKey="_id"
-      onChange={onChange}
-      showSorterTooltip={{ target: "sorter-icon" }}
-    />
+    <>
+      <Table
+        loading={isFetching}
+        columns={columns}
+        dataSource={tableData}
+        rowKey="_id"
+        showSorterTooltip={{ target: "sorter-icon" }}
+      />
+
+      <div className="mt-8 flex justify-center">
+        <Pagination
+          onChange={(value) => setPage(value)}
+          current={page}
+          pageSize={metaData?.limit}
+          total={metaData?.total}
+        />
+      </div>
+    </>
   );
 };
 

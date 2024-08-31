@@ -1,10 +1,9 @@
 import { TQueryParams, TResponseRedux } from "../../../types";
-import { TFacilitieCard } from "../../../types/facilitie.type";
+import { TFacilitie } from "../../../types/facilitie.type";
 import { baseApi } from "../../api/baseApi";
 
 const bookApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-
     // all get routes
     getSingleFacilitie: builder.query({
       query: (id) => ({
@@ -26,12 +25,13 @@ const bookApi = baseApi.injectEndpoints({
           params,
         };
       },
-      transformResponse: (response: TResponseRedux<TFacilitieCard[]>) => {
+      transformResponse: (response: TResponseRedux<TFacilitie[]>) => {
         return {
           data: response.data,
           meta: response.meta,
         };
       },
+      providesTags: ["Facilities"],
     }),
     getAvailabeFacilitieSlot: builder.query({
       query: (args) => {
@@ -54,6 +54,14 @@ const bookApi = baseApi.injectEndpoints({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["Facilities"],
+    }),
+    deleteFacility: builder.mutation({
+      query: (id) => ({
+        url: `/facilities/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Facilities"],
     }),
   }),
 });
@@ -65,5 +73,6 @@ export const {
   useGetAvailabeFacilitieSlotQuery,
 
   // all post routes
-  useCreateFacilityMutation
+  useCreateFacilityMutation,
+  useDeleteFacilityMutation,
 } = bookApi;
