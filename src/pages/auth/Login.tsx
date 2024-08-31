@@ -64,7 +64,7 @@ const Login = () => {
                   <PHInput label="Email" name="email" type="text" />
                 </Col>
                 <Col>
-                  <PHInput label="Password" name="password" type="password" />
+                  <PHInput label="Password" name="password" type="text" />
                 </Col>
               </Row>
 

@@ -4,15 +4,13 @@ import { adminPaths } from "../../routes/admin.route";
 import { useAppSelector } from "../../redux/hooks";
 import { currentUser } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
-import { viewerPaths } from "../../routes/viewer.route";
-import { authorPaths } from "../../routes/author.route";
+import { userPaths } from "../../routes/user.route";
 
 const { Sider } = Layout;
 
 const userRole = {
   ADMIN: "admin",
-  AUTHOR: "author",
-  VIEWER: "viewer",
+  USER: "user",
 };
 
 const Sidebar = () => {
@@ -23,11 +21,8 @@ const Sidebar = () => {
     case userRole.ADMIN:
       sidebaritems = sidebarRouteGenerator(adminPaths, userRole.ADMIN);
       break;
-    case userRole.AUTHOR:
-      sidebaritems = sidebarRouteGenerator(authorPaths, userRole.AUTHOR);
-      break;
-    case userRole.VIEWER:
-      sidebaritems = sidebarRouteGenerator(viewerPaths, userRole.VIEWER);
+    case userRole.USER:
+      sidebaritems = sidebarRouteGenerator(userPaths, userRole.USER);
       break;
 
     default:
@@ -51,7 +46,7 @@ const Sidebar = () => {
         className="demo-logo-vertical"
       >
         <Link to="/">
-          <h2>PH University</h2>
+          <h2>SR Sport Facilie</h2>
         </Link>
       </div>
       <Menu

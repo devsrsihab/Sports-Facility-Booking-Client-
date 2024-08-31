@@ -1,9 +1,7 @@
+import Dashboard from "../../components/admin/Dashboard";
+
 const ViewerDashboard = () => {
-  return (
-    <div>
-      <h2>Welcome to the ViewerDashboard Component</h2>
-    </div>
-  );
+  return <Dashboard/>
 };
 
 export default ViewerDashboard;

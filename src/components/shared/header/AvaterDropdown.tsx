@@ -6,34 +6,31 @@ import { useAppDispatch } from "../../../redux/hooks";
 import { logout } from "../../../redux/features/auth/authSlice";
 import { useGetMeQuery } from "../../../redux/features/user/userApi";
 
-
-
 const AvaterDropdown: React.FC = () => {
-      const [open, setOpen] = useState(false);
-      const distpatch = useAppDispatch();
-      const { data, isLoading } = useGetMeQuery(undefined);
-      const userInfo = data?.data;
+  const [open, setOpen] = useState(false);
+  const distpatch = useAppDispatch();
+  const { data, isLoading } = useGetMeQuery(undefined);
+  const userInfo = data?.data;
 
-      console.log(userInfo);
+  const handleLogout = () => {
+    distpatch(logout());
+  };
 
-      const handleLogout = () => {
-        distpatch(logout());
-      };
+  const items: MenuProps["items"] = [
+    {
+      key: "profile",
+      label: <Link to={`/${userInfo?.role}/dashboard`}>Dashboard</Link>,
+    },
+    {
+      key: "username",
+      label: <span>{userInfo?.name}</span>,
+    },
 
-      const items: MenuProps["items"] = [
-        {
-          key: "username",
-          label: <span>{userInfo?.id}</span>,
-        },
-        {
-          key: "profile",
-          label: <Link to={`/${userInfo?.role}/dashboard`}>Dashboard</Link>,
-        },
-        {
-          key: "logout",
-          label: <span onClick={handleLogout}>Logout</span>,
-        },
-      ];
+    {
+      key: "logout",
+      label: <span onClick={handleLogout}>Logout</span>,
+    },
+  ];
   return (
     <>
       <div style={{ display: "flex", justifyContent: "end" }}>

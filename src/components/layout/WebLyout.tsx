@@ -66,7 +66,7 @@ const WebLyout = () => {
         <ScrollToTopButton />
       </Content>
       <Footer style={{ textAlign: "center", padding: "12px 24px" }}>
-        Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        SRSIHAB Solutions ©{new Date().getFullYear()} Created by SRSIHAB
       </Footer>
     </Layout>
   );

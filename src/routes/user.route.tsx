@@ -1,7 +1,7 @@
 import ViewerBorrowings from "../pages/viewer/ViewerBorrowed/ViewerBorrowings";
 import ViewerDashboard from "../pages/viewer/ViewerDashboard";
 
-export const viewerPaths = [
+export const userPaths = [
   {
     name: "Dashboard",
     path: "dashboard",

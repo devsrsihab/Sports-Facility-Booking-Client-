@@ -75,9 +75,9 @@ const CreateStudent = () => {
       await addStudent(formData);
 
       toast.success("Student Created Successfully", { id: loader });
-    } catch (error) {
+    } catch (error:any) {
       console.log(error);
-      toast.error("Something Went Wrong", { id: loader });
+      toast.error(error.data.message, { id: loader });
     }
   };
 
