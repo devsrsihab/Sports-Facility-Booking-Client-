@@ -4,12 +4,8 @@ import { baseApi } from "../../api/baseApi";
 
 const bookApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    // getAllBook: builder.query({
-    //   query: () => ({
-    //     url: "/books",
-    //     method: "GET",
-    //   }),
-    // }),
+
+    // all get routes
     getSingleFacilitie: builder.query({
       query: (id) => ({
         url: `/facilities/${id}`,
@@ -51,12 +47,14 @@ const bookApi = baseApi.injectEndpoints({
       },
     }),
 
-    // getAllBookByCategory: builder.query({
-    //   query: (catname) => ({
-    //     url: `/books/bookebycat/${catname}`,
-    //     method: "GET",
-    //   }),
-    // }),
+    // all post routes
+    createFacility: builder.mutation({
+      query: (data) => ({
+        url: "/facilities",
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -65,4 +63,7 @@ export const {
   useGetAllFacilitieQuery,
   useGetSingleFacilitieQuery,
   useGetAvailabeFacilitieSlotQuery,
+
+  // all post routes
+  useCreateFacilityMutation
 } = bookApi;
