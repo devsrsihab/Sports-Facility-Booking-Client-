@@ -7,6 +7,7 @@ import MenuDrawer from "../shared/header/MenuDrawer";
 import { currentToken } from "../../redux/features/auth/authSlice";
 import { useAppSelector } from "../../redux/hooks";
 import "../../App.css";
+import ScrollToTopButton from "../shared/ScrollToTopButton";
 
 const { Header, Content, Footer } = Layout;
 
@@ -48,7 +49,7 @@ const WebLyout = () => {
           </Col>
         </Row>
       </Header>
-      <Content style={{ padding: "0 24px 0 0", background: colorBgContainer }}>
+      <Content style={{ background: colorBgContainer }}>
         <Row justify="center" style={{ marginBottom: "24px" }}>
           <Col xs={24} md={20} lg={24}>
             <div
@@ -62,6 +63,7 @@ const WebLyout = () => {
             </div>
           </Col>
         </Row>
+        <ScrollToTopButton />
       </Content>
       <Footer style={{ textAlign: "center", padding: "12px 24px" }}>
         Ant Design ©{new Date().getFullYear()} Created by Ant UED

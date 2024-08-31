@@ -10,9 +10,9 @@ const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["Borrowings", "GetMe"],
     }),
-    registerViewer: builder.mutation({
+    registerUser: builder.mutation({
       query: (payload) => ({
-        url: "/auth/register-viewer",
+        url: "/auth/register-user",
         method: "POST",
         body: payload,
       }),
@@ -21,4 +21,4 @@ const authApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useLoginMutation, useRegisterViewerMutation } = authApi;
+export const { useLoginMutation, useRegisterUserMutation } = authApi;

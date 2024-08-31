@@ -10,6 +10,7 @@ import {
   useGetSingleFacilitieQuery,
 } from "../redux/features/facilitie/facilitieApi";
 import { useMakeBookingMutation } from "../redux/features/booking/bookingApi";
+import LoadingSpinner from "../components/shared/LoadingSpinner";
 
 const Booking = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const Booking = () => {
     useGetSingleFacilitieQuery(id, { skip: !id });
 
   console.log(facilityData);
-  const [makeBooking] = useMakeBookingMutation();
+  const [makeBooking, { isLoading: isCreatingBooking }] = useMakeBookingMutation();
   const [queryParams, setQueryParams] = useState<{
     date: string;
     facility: string;
@@ -82,6 +83,7 @@ const Booking = () => {
 
       message.success("Booking successful!");
       console.log("Booking Result:", result);
+      window.location.href = result.data.payment_url;
     } catch (error: any) {
       console.error("Booking failed:", error);
       message.error(error.data.message);
@@ -89,7 +91,10 @@ const Booking = () => {
   };
 
   return (
-    <Row align="middle" gutter={10} className="p-10">
+    <Row align="middle" gutter={10} className="p-10 relative">
+      {isLoading || isLoadingFacilitie || isCreatingBooking ? (
+        <LoadingSpinner />
+      ) : null}
       <Col className="p-8 mb-10" span={12}>
         {/* ======= Display Facility Info ========== */}
         {isLoadingFacilitie || (

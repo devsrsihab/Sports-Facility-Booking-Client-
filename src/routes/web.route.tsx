@@ -8,23 +8,40 @@ import Facilities from "../pages/Facilities";
 import Home from "../pages/Home";
 import Booking from "../pages/Booking";
 import ProtectedRoute from "../components/layout/ProtectedRoute";
-
+import NotFound from "../pages/NotFound";
+import AutoScrollToTop from "../components/shared/AutoScrollToTop";
 export const webPaths = [
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <AutoScrollToTop>
+        <Home />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/about",
-    element: <About />,
+    element: (
+      <AutoScrollToTop>
+        <About />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/contact",
-    element: <ContactUs />,
+    element: (
+      <AutoScrollToTop>
+        <ContactUs />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/facilities",
-    element: <Facilities />,
+    element: (
+      <AutoScrollToTop>
+        <Facilities />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/facilities/:id",
@@ -32,22 +49,44 @@ export const webPaths = [
   },
   {
     path: "/category/:catname",
-    element: <ArchiveCategory />,
+    element: (
+      <AutoScrollToTop>
+        <ArchiveCategory />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/booking/:id",
     element: (
-      <ProtectedRoute>
-        <Booking />
-      </ProtectedRoute>
+      <AutoScrollToTop>
+        <ProtectedRoute>
+          <Booking />
+        </ProtectedRoute>
+      </AutoScrollToTop>
     ),
   },
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <AutoScrollToTop>
+        <Register />
+      </AutoScrollToTop>
+    ),
   },
   {
     path: "/auth/login",
-    element: <Login />,
+    element: (
+      <AutoScrollToTop>
+        <Login />
+      </AutoScrollToTop>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <AutoScrollToTop>
+        <NotFound />
+      </AutoScrollToTop>
+    ),
   },
 ];
