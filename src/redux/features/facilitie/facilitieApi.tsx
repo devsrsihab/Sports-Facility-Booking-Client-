@@ -1,4 +1,4 @@
-import {  TQueryParams, TResponseRedux } from "../../../types";
+import { TQueryParams, TResponseRedux } from "../../../types";
 import { TFacilitieCard } from "../../../types/facilitie.type";
 import { baseApi } from "../../api/baseApi";
 
@@ -63,6 +63,6 @@ const bookApi = baseApi.injectEndpoints({
 export const {
   // all get routes
   useGetAllFacilitieQuery,
-  useGetSingleFacilitieQuery, 
-  useGetAvailabeFacilitieSlotQuery
+  useGetSingleFacilitieQuery,
+  useGetAvailabeFacilitieSlotQuery,
 } = bookApi;

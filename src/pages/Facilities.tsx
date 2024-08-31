@@ -6,10 +6,17 @@ import NotFound404 from "../components/shared/result/NotFound404";
 import SectionHeader from "../components/shared/SectionHeader";
 import { useGetAllFacilitieQuery } from "../redux/features/facilitie/facilitieApi";
 import { TFacilitieCardProps } from "../types/facilitie.type";
+import { Pagination } from "antd";
 
 const Facilities = () => {
-  const { data, isLoading } = useGetAllFacilitieQuery(undefined);
+    const [page, setPage] = useState(1);
+
+  const { data, isLoading } = useGetAllFacilitieQuery([
+    { name: "limit", value: 10 },
+    { name: "page", value: page },
+  ]);
   const facilities = data?.data;
+  const metaData = data?.meta;
 
   const [filteredFacilities, setFilteredFacilities] = useState<
     TFacilitieCardProps[] | undefined
@@ -54,6 +61,14 @@ const Facilities = () => {
             />
           ))
         )}
+      </div>
+      <div className="mt-8 flex justify-center">
+        <Pagination
+          onChange={(value) => setPage(value)}
+          current={page}
+          pageSize={metaData?.limit}
+          total={metaData?.total}
+        />
       </div>
     </div>
   );
