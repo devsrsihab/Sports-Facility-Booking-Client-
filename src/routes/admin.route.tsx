@@ -2,6 +2,7 @@ import AcademicSemester from "../pages/admin/academicManagement/AcademicSemester
 import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcademicSemester";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateFacility from "../pages/admin/facility/CreateFacility";
+import EditFacility from "../pages/admin/facility/EditFacility";
 import Facilities from "../pages/admin/facility/Facilities";
 
 export const adminPaths = [
@@ -37,6 +38,10 @@ export const adminPaths = [
         name: "Facilities",
         path: "facilities",
         element: <Facilities />,
+      },
+      {
+        path: "facilities/:id",
+        element: <EditFacility />,
       },
     ],
   },

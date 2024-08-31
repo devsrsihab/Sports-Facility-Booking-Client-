@@ -12,7 +12,7 @@ const Facilities = () => {
     const [page, setPage] = useState(1);
 
   const { data, isLoading } = useGetAllFacilitieQuery([
-    { name: "limit", value: 10 },
+    { name: "limit", value: 8 },
     { name: "page", value: page },
   ]);
   const facilities = data?.data;

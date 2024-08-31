@@ -10,6 +10,7 @@ const bookApi = baseApi.injectEndpoints({
         url: `/facilities/${id}`,
         method: "GET",
       }),
+      providesTags: ["Facilities"],
     }),
     getAllFacilitie: builder.query({
       query: (args) => {
@@ -24,6 +25,7 @@ const bookApi = baseApi.injectEndpoints({
           method: "GET",
           params,
         };
+
       },
       transformResponse: (response: TResponseRedux<TFacilitie[]>) => {
         return {
@@ -63,6 +65,17 @@ const bookApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["Facilities"],
     }),
+    updateFacilitie: builder.mutation({
+      query: (args) => {
+        console.log(args);
+        return {
+          url: `/facilities/${args.id}`,
+          method: "PATCH",
+          body: args.formData,
+        };
+      },
+      invalidatesTags: ["Facilities"],
+    }),
   }),
 });
 
@@ -75,4 +88,5 @@ export const {
   // all post routes
   useCreateFacilityMutation,
   useDeleteFacilityMutation,
+  useUpdateFacilitieMutation
 } = bookApi;

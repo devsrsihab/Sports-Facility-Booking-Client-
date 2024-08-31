@@ -4,12 +4,14 @@ import { Button, Col, Flex, Form, Input } from "antd";
 import { toast } from "sonner";
 import { TResponseRedux } from "../../../types/global.type";
 import PHInput from "../../../components/form/PHInput";
-import { useCreateFacilityMutation } from "../../../redux/features/facilitie/facilitieApi";
+import {  useCreateFacilityMutation } from "../../../redux/features/facilitie/facilitieApi";
 import { TFacilitie } from "../../../types/facilitie.type";
 import cloudinaryUpload from "../../../utils/cloudinaryUpload";
+import { useNavigate } from "react-router-dom";
 
 const CreateFacility = () => {
-  const [createFacility] = useCreateFacilityMutation();
+  const [createFacility, { isLoading:isFacilitieCreating }] = useCreateFacilityMutation();
+  const navigation = useNavigate()
 
   const onSubmi: SubmitHandler<FieldValues> = async (data) => {
     const loader = toast.loading("Creating facility...");
@@ -36,7 +38,8 @@ const CreateFacility = () => {
       if (res.error) {
         toast.error(res.error.data.message, { id: loader });
       } else {
-        toast.success("Semester created successfully", { id: loader });
+        toast.success("Semester updated successfully", { id: loader });
+        navigation('/admin/facilities')
       }
     } catch (error: any) {
       toast.error(error?.data?.message, { id: loader });
@@ -66,7 +69,7 @@ const CreateFacility = () => {
             )}
           />
 
-          <Button htmlType="submit">Submit</Button>
+          <Button disabled={isFacilitieCreating} htmlType="submit">Submit</Button>
         </PHForm>
       </Col>
     </Flex>

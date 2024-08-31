@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useGetAllFacilitieQuery } from "../../../redux/features/facilitie/facilitieApi";
 import { TFacilitie } from "../../../types/facilitie.type";
 import FacilitieConfirmationModal from "../../../components/Facilities/FacilitieConfirmationModal";
+import { Link } from "react-router-dom";
 
 const Facilities = () => {
   const [openReturn, setOpenReturn] = useState(false);
@@ -57,7 +58,9 @@ const Facilities = () => {
       key: "x",
       render: (item) => (
         <div className="flex gap-2">
-          <Button className="bg-blue-500 text-white">Edit</Button>
+          <Link to={`/admin/facilities/${item._id}`}>
+            <Button className="bg-blue-500 text-white">Edit</Button>
+          </Link>
           <Button
             onClick={() => {
               setSelectedId(item._id);
