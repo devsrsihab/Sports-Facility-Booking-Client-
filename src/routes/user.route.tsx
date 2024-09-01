@@ -1,4 +1,4 @@
-import ViewerBorrowings from "../pages/viewer/ViewerBorrowed/ViewerBorrowings";
+import Bookings from "../pages/admin/booking/Bookings";
 import ViewerDashboard from "../pages/viewer/ViewerDashboard";
 
 export const userPaths = [
@@ -8,13 +8,8 @@ export const userPaths = [
     element: <ViewerDashboard />,
   },
   {
-    name: "Books",
-    children: [
-      {
-        name: "Borrowed Books", 
-        path: "borrowed-books",
-        element: <ViewerBorrowings/>
-      }
-    ]
-  }
+    name: "Bookings",
+    path: "bookings",
+    element: <Bookings />,
+  },
 ];

@@ -3,9 +3,12 @@ import type { TableColumnsType } from "antd";
 import { useState } from "react";
 import { useGetAllBookingQuery } from "../../../redux/features/booking/bookingApi";
 import moment from "moment";
-import BookingConfirmationModal from '../../../components/Booking/BookingConfirmationModal';
+import BookingConfirmationModal from "../../../components/Booking/BookingConfirmationModal";
+import { currentUser } from "../../../redux/features/auth/authSlice";
+import { useAppSelector } from "../../../redux/hooks";
 
 const Bookings = () => {
+  const user = useAppSelector(currentUser);
   const [openReturn, setOpenReturn] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [page, setPage] = useState(1);
@@ -79,30 +82,35 @@ const Bookings = () => {
         }
       },
     },
-    {
-      title: "Action",
-      key: "x",
-      render: (item) => (
-        <div className="flex gap-2">
-          <Button
-            onClick={() => {
-              setSelectedId(item._id);
-              setOpenReturn(true);
-            }}
-            className="bg-red-500 text-white"
-          >
-            Delete
-          </Button>
-          {selectedId === item._id && (
-            <BookingConfirmationModal
-              id={item._id}
-              openReturn={openReturn}
-              setOpenReturn={setOpenReturn}
-            />
-          )}
-        </div>
-      ),
-    },
+    // Conditionally render the "Action" column if the user is an admin
+    ...(user?.role === "admin"
+      ? [
+          {
+            title: "Action",
+            key: "x",
+            render: (item: TTableData) => (
+              <div className="flex gap-2">
+                <Button
+                  onClick={() => {
+                    setSelectedId(item._id);
+                    setOpenReturn(true);
+                  }}
+                  className="bg-red-500 text-white"
+                >
+                  Delete
+                </Button>
+                {selectedId === item._id && (
+                  <BookingConfirmationModal
+                    id={item._id}
+                    openReturn={openReturn}
+                    setOpenReturn={setOpenReturn}
+                  />
+                )}
+              </div>
+            ),
+          },
+        ]
+      : []),
   ];
 
   return (
