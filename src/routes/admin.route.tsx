@@ -1,6 +1,7 @@
 import AcademicSemester from "../pages/admin/academicManagement/AcademicSemester";
 import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcademicSemester";
 import AdminDashboard from "../pages/admin/AdminDashboard";
+import Bookings from "../pages/admin/booking/Bookings";
 import CreateFacility from "../pages/admin/facility/CreateFacility";
 import EditFacility from "../pages/admin/facility/EditFacility";
 import Facilities from "../pages/admin/facility/Facilities";
@@ -44,5 +45,10 @@ export const adminPaths = [
         element: <EditFacility />,
       },
     ],
+  },
+  {
+    name: "Bookings",
+    path: "bookings",
+    element: <Bookings />,
   },
 ];

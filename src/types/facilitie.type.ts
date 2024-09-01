@@ -23,5 +23,8 @@ export type TFacilitie = {
   image: string;
   availableSlots: number;
   pricePerHour: number;
-  meta: any
+  isDeleted: boolean;
+  createdAt: string;
+  updatedAt: string;
+  meta: any;
 };
