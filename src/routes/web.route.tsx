@@ -1,5 +1,4 @@
 import About from "../pages/About";
-import ArchiveCategory from "../pages/ArchiveCategory";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import FacilitieDetails from "../pages/FacilitieDetails";
@@ -47,14 +46,7 @@ export const webPaths = [
     path: "/facilities/:id",
     element: <FacilitieDetails />,
   },
-  {
-    path: "/category/:catname",
-    element: (
-      <AutoScrollToTop>
-        <ArchiveCategory />
-      </AutoScrollToTop>
-    ),
-  },
+
   {
     path: "/booking/:id",
     element: (

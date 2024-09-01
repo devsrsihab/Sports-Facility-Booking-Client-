@@ -39,7 +39,7 @@ const FeaturedSection = () => {
           <NotFound404 />
         ) : (
           <>
-            {facilities?.map((facilitie: Partial<TFacilitieCardProps>) => (
+            {facilities?.slice( 0, 4)?.map((facilitie: Partial<TFacilitieCardProps>) => (
               <FacilitieCard
                 key={facilitie._id}
                 facilitie={facilitie as TFacilitieCardProps}

@@ -41,48 +41,36 @@ const HeaderBar = () => {
   const { pathname } = location;
   const authToken = useAppSelector(currentToken);
 
+  // Filter menus based on authentication status
   const filteredMenus = authToken
     ? menus.filter((menu) => menu.key !== "login" && menu.key !== "register")
-    : menus.filter((menu) => menu.key !== "borrowed");
+    : menus;
 
+  // Determine the active menu item based on the current pathname
   const activeMenuItem =
-    menus.find((menu) => pathname === menu.path)?.key || "home";
+    filteredMenus.find((menu) => pathname === menu.path)?.key || "home";
 
   return (
-    <div
-      className="header-bar"
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflowX: "auto", 
-        whiteSpace: "nowrap",
-      }}
-    >
+    <div className="header-bar">
       <Menu
-        theme="dark"
         mode="horizontal"
         selectedKeys={[activeMenuItem]}
         style={{
           display: "flex",
+          background: "#001529",
           flexGrow: 1,
           justifyContent: "center",
           borderBottom: "none",
         }}
-      >
-        {filteredMenus.map(({ key, label, path }) => (
-          <Menu.Item
-            key={key}
-            style={{
-              backgroundColor:
-                activeMenuItem === key ? "#008f70" : "transparent",
-            color: activeMenuItem === key ? "#fff" : "inherit",
-            }}
-          >
-            <Link to={path}>{label}</Link>
-          </Menu.Item>
-        ))}
-      </Menu>
+        items={filteredMenus.map(({ key, label, path }) => ({
+          key,
+          label: <Link to={path}>{label}</Link>,
+          style: {
+            backgroundColor: activeMenuItem === key ? "#008f70" : "transparent",
+            color: activeMenuItem === key ? "#fff" : "#a6adb4",
+          },
+        }))}
+      />
     </div>
   );
 };

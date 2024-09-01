@@ -9,9 +9,9 @@ import { userPaths } from "./user.route";
 
 const router = createBrowserRouter([
   {
-    path: "/", // Root path
-    element: <App />, // The layout component
-    children: routeGenerator(webPaths), // Routes generated for web paths
+    path: "/",
+    element: <App />, 
+    children: routeGenerator(webPaths), 
   },
   {
     path: "/admin",
