@@ -1,5 +1,5 @@
 import { Layout, theme, Row, Col } from "antd";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import HeaderBar from "../shared/header/HeaderBar";
 import AvaterDropdown from "../shared/header/AvaterDropdown";
 import Logo from "../shared/header/Logo";
@@ -66,7 +66,14 @@ const WebLyout = () => {
         <ScrollToTopButton />
       </Content>
       <Footer style={{ textAlign: "center", padding: "12px 24px" }}>
-        SRSIHAB Solutions ©{new Date().getFullYear()} Created by SRSIHAB
+        <div className="flex gap-10 justify-center items-center">
+          <p>SRSIHAB Solutions ©{new Date().getFullYear()} Created by SRSIHAB</p>
+          <div className="footer_menu flex justify-center items-center gap-5 ">
+            <Link className="capitalize font-semibold" to="/about">About</Link>
+            <Link className="capitalize font-semibold" to="/contact">Contact</Link>
+          </div>
+        
+        </div>
       </Footer>
     </Layout>
   );

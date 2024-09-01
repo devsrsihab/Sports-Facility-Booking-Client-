@@ -120,7 +120,7 @@ const Bookings = () => {
         columns={columns}
         dataSource={tableData}
         rowKey="_id"
-        showSorterTooltip={{ target: "sorter-icon" }}
+        pagination={false}
       />
 
       <div className="mt-8 flex justify-center">
