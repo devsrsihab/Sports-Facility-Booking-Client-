@@ -11,7 +11,7 @@ import { logout, setuser } from "../features/auth/authSlice";
 import { toast } from "sonner";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:8000/api/v1",
+  baseUrl: "https://srs-sport-server.vercel.app/api/v1",
 
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
@@ -46,10 +46,13 @@ const baseQueryWithReferenceToken: BaseQueryFn<
     console.log("sending refresh token");
 
     //*send the refresh token req
-    const res = await fetch("http://localhost:8000/api/v1/auth/refresh-token", {
-      method: "POST",
-      credentials: "include",
-    });
+    const res = await fetch(
+      "https://srs-sport-server.vercel.app/api/v1/auth/refresh-token",
+      {
+        method: "POST",
+        credentials: "include",
+      }
+    );
 
     const { data } = await res.json();
     if (data?.accessToken) {
