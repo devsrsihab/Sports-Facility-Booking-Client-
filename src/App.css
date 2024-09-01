@@ -45,3 +45,8 @@ img {
 .custom-carousel .slick-list {
   margin-right: -18px; /* Compensate for the last item's margin */
 }
+/* Example CSS */
+.ant-menu-item-selected {
+  background-color: #008f70 !important;
+  color: #fff !important;
+}

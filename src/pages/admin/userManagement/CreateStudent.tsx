@@ -12,7 +12,6 @@ import {
 import { useAddStudentMutation } from "../../../redux/features/admin/userManagement.Api";
 import { toast } from "sonner";
 
-
 const formDefaultValue = {
   name: {
     firstName: "Ivor",
@@ -62,7 +61,7 @@ const CreateStudent = () => {
   }));
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const loader = toast.loading("Student Creating...", { duration: 1000 });
+    const loader = toast.loading("Student Creating...");
     try {
       console.log(data);
       const studentData = {
@@ -75,7 +74,7 @@ const CreateStudent = () => {
       await addStudent(formData);
 
       toast.success("Student Created Successfully", { id: loader });
-    } catch (error:any) {
+    } catch (error: any) {
       console.log(error);
       toast.error(error.data.message, { id: loader });
     }

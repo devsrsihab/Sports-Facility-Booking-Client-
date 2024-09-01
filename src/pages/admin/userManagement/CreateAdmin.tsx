@@ -31,9 +31,9 @@ const CreateAdmin = () => {
         });
         navigate("/admin/admin-list");
       }
-    } catch (error) {
+    } catch (error:any) {
       console.log(error);
-      toast.error("Something Went Wrong", { id: loader, duration: 2000 });
+      toast.error(error.data.message, { id: loader, duration: 2000 });
     }
   };
 

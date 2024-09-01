@@ -55,8 +55,8 @@ const HeaderBar = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        overflowX: "auto", // Allow horizontal scrolling on small devices
-        whiteSpace: "nowrap", // Prevent line breaks in menu items
+        overflowX: "auto", 
+        whiteSpace: "nowrap",
       }}
     >
       <Menu
