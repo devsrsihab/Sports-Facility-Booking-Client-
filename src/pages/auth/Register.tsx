@@ -71,6 +71,24 @@ const Register: React.FC = () => {
                   />
 
                   <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field }) => (
+                      <Form.Item
+                        label="Phone Number"
+                        validateStatus={errors.phone ? "error" : ""}
+                        help={errors.phone?.message as React.ReactNode}
+                      >
+                        <Input
+                          placeholder="phone"
+                          {...field}
+                          id="phone"
+                          type="phone"
+                        />
+                      </Form.Item>
+                    )}
+                  />
+                  <Controller
                     name="email"
                     control={control}
                     render={({ field }) => (
