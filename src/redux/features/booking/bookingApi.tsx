@@ -28,6 +28,14 @@ const bookingApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["Bookings"],
     }),
+    cancelBooking: builder.mutation({
+      query: (id) => ({
+        url: `/bookings/cancel/${id}`,
+        method: "PATCH",
+      }),
+
+      invalidatesTags: ["Bookings"],
+    }),
     deleteBooking: builder.mutation({
       query: (id) => ({
         url: `/bookings/${id}`,
@@ -44,5 +52,6 @@ export const {
   useGetAllBookingQuery,
   // all post hook
   useMakeBookingMutation,
+  useCancelBookingMutation,
   useDeleteBookingMutation,
 } = bookingApi;

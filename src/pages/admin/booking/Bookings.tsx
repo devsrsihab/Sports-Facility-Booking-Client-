@@ -6,6 +6,7 @@ import moment from "moment";
 import BookingConfirmationModal from "../../../components/Booking/BookingConfirmationModal";
 import { currentUser } from "../../../redux/features/auth/authSlice";
 import { useAppSelector } from "../../../redux/hooks";
+import BookingCancelModal from "../../../components/Booking/BookingCancelModal";
 
 const Bookings = () => {
   const user = useAppSelector(currentUser);
@@ -73,6 +74,12 @@ const Bookings = () => {
           );
         }
 
+        if (item === "cancelled") {
+          return (
+            <Button className="capitalize bg-orange-500 text-white">{item}</Button>
+          );
+        }
+
         if (item === "confirmed") {
           return (
             <Button className="capitalize bg-green-500 text-white">
@@ -82,35 +89,54 @@ const Bookings = () => {
         }
       },
     },
-    // Conditionally render the "Action" column if the user is an admin
-    ...(user?.role === "admin"
-      ? [
-          {
-            title: "Action",
-            key: "x",
-            render: (item: TTableData) => (
-              <div className="flex gap-2">
-                <Button
-                  onClick={() => {
-                    setSelectedId(item._id);
-                    setOpenReturn(true);
-                  }}
-                  className="bg-red-500 text-white"
-                >
-                  Delete
-                </Button>
-                {selectedId === item._id && (
-                  <BookingConfirmationModal
-                    id={item._id}
-                    openReturn={openReturn}
-                    setOpenReturn={setOpenReturn}
-                  />
-                )}
-              </div>
-            ),
-          },
-        ]
-      : []),
+    {
+      title: "Action",
+      key: "x",
+      render: (item: TTableData) => (
+        <>
+          {user?.role === "admin" && (
+            <div className="flex gap-2">
+              <Button
+                onClick={() => {
+                  setSelectedId(item._id);
+                  setOpenReturn(true);
+                }}
+                className="bg-red-500 text-white"
+              >
+                Delete
+              </Button>
+              {selectedId === item._id && (
+                <BookingConfirmationModal
+                  id={item._id}
+                  openReturn={openReturn}
+                  setOpenReturn={setOpenReturn}
+                />
+              )}
+            </div>
+          )}
+          {user?.role === "user" && (
+            <div className="flex gap-2">
+              <Button
+                onClick={() => {
+                  setSelectedId(item._id);
+                  setOpenReturn(true);
+                }}
+                className="bg-red-500 text-white"
+              >
+                Cancell
+              </Button>
+              {selectedId === item._id && (
+                <BookingCancelModal
+                  id={item._id}
+                  openReturn={openReturn}
+                  setOpenReturn={setOpenReturn}
+                />
+              )}
+            </div>
+          )}
+        </>
+      ),
+    },
   ];
 
   return (
