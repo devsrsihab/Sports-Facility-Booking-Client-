@@ -23,7 +23,7 @@ const BenefitSections = () => {
         <div className="flex flex-wrap">
           <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
             <div className="flex items-center gap-4">
-              <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
+              <div className="bg-primary/85 w-12 h-12 rounded-full flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={24}
@@ -52,7 +52,7 @@ const BenefitSections = () => {
           </div>
           <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
             <div className="flex items-center gap-4">
-              <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
+              <div className="bg-primary/85 w-12 h-12 rounded-full flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={24}
@@ -79,7 +79,7 @@ const BenefitSections = () => {
           </div>
           <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
             <div className="flex items-center gap-4">
-              <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center">
+              <div className="bg-primary/85 w-12 h-12 rounded-full flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={24}

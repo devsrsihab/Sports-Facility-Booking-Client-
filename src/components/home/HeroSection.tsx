@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import homeHero from "../../assets/img/home/homeHero.avif"
+import homeHero from "../../assets/img/home/homeHero.avif";
+
 const HeroSection = () => {
   return (
     <div className="relative bg-white">
@@ -19,13 +20,13 @@ const HeroSection = () => {
               <div className="hidden sm:mb-10 sm:flex">
                 <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   Book your favorite sports facilities with ease.{" "}
-                  <a
-                    href="#"
-                    className="whitespace-nowrap font-semibold text-indigo-600"
+                  <Link
+                    to="/facilities"
+                    className="whitespace-nowrap font-semibold text-[#008f70]"
                   >
                     <span className="absolute inset-0" aria-hidden="true" />
                     Explore Now <span aria-hidden="true">&rarr;</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -38,14 +39,14 @@ const HeroSection = () => {
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
-                  to="/books"
-                  className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  to="/facilities"
+                  className="rounded-md bg-[#008f70] px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-[#007e62] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#008f70]"
                 >
                   Book Now
                 </Link>
                 <Link
-                  to="/register"
-                  className="text-base font-semibold leading-7 text-gray-900"
+                  to="/about"
+                  className="text-base font-semibold leading-7 text-gray-900 hover:text-[#008f70]"
                 >
                   Learn More <span aria-hidden="true">→</span>
                 </Link>
@@ -54,11 +55,11 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div className="bg-[#f2a922] lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
           src={homeHero}
-          alt="Library Image"
+          alt="Sports Facilities Image"
         />
       </div>
     </div>

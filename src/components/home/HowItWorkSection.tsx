@@ -32,7 +32,7 @@ const HowItWorkSection = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       data-config-id="svg-a4bc41-1"
                     >
-                      <circle cx="17.5" cy="17.5" r="17.5" fill="#4F46E5" />
+                      <circle cx="17.5" cy="17.5" r="17.5" fill="#10B981" />
                       <path
                         d="M11.667 18.3333L15.0003 21.6666L23.3337 13.3333"
                         stroke="white"
@@ -84,7 +84,7 @@ const HowItWorkSection = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       data-config-id="svg-a4bc41-2"
                     >
-                      <circle cx="17.5" cy="17.5" r="17.5" fill="#4F46E5" />
+                      <circle cx="17.5" cy="17.5" r="17.5" fill="#10B981" />
                       <path
                         d="M11.667 18.3333L15.0003 21.6666L23.3337 13.3333"
                         stroke="white"
