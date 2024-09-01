@@ -5,7 +5,7 @@ const ContactAddress = () => {
         <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-3xl font-bold tracking-tight text-primary">
                 Get in touch
               </h2>
               <p className="mt-4 leading-7 text-gray-600">
@@ -25,7 +25,7 @@ const ContactAddress = () => {
                     <dd>
                       <a
                         href="mailto:collaborate@yourcompany.com"
-                        className="font-semibold text-indigo-600"
+                        className="font-semibold text-secondary"
                       >
                         collaborate@yourcompany.com
                       </a>
@@ -47,7 +47,7 @@ const ContactAddress = () => {
                     <dd>
                       <a
                         href="mailto:press@yourcompany.com"
-                        className="font-semibold text-indigo-600"
+                        className="font-semibold text-secondary"
                       >
                         press@yourcompany.com
                       </a>
@@ -69,7 +69,7 @@ const ContactAddress = () => {
                     <dd>
                       <a
                         href="mailto:careers@yourcompany.com"
-                        className="font-semibold text-indigo-600"
+                        className="font-semibold text-secondary"
                       >
                         careers@yourcompany.com
                       </a>
@@ -91,7 +91,7 @@ const ContactAddress = () => {
                     <dd>
                       <a
                         href="mailto:hello@yourcompany.com"
-                        className="font-semibold text-indigo-600"
+                        className="font-semibold text-secondary"
                       >
                         hello@yourcompany.com
                       </a>

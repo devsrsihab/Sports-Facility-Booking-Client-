@@ -7,10 +7,15 @@ import Testmonials from "../components/home/Testimonial/Testmonials";
 const Home = () => {
   return (
     <>
+      {/* hero section */}
       <HeroSection />
+      {/* featured section */}
       <FeaturedSection />
+      {/* how it work section */}
       <HowItWorkSection />
+      {/* testmonial section */}
       <Testmonials />
+      {/* benefit section */}
       <BenefitSections />
     </>
   );

@@ -1,10 +1,9 @@
-import teamImg1 from "../../assets/img/team/team (1).avif"
-import teamImg2 from "../../assets/img/team/team (2).avif"
-import teamImg3 from "../../assets/img/team/team (3).avif"
-import teamImg4 from "../../assets/img/team/team (4).avif"
-import teamImg5 from "../../assets/img/team/team (5).avif"
-import teamImg6 from "../../assets/img/team/team (6).jpeg"
-
+import teamImg1 from "../../assets/img/team/team (1).avif";
+import teamImg2 from "../../assets/img/team/team (2).avif";
+import teamImg3 from "../../assets/img/team/team (3).avif";
+import teamImg4 from "../../assets/img/team/team (4).avif";
+import teamImg5 from "../../assets/img/team/team (5).avif";
+import teamImg6 from "../../assets/img/team/team (6).jpeg";
 
 const team = [
   {
@@ -43,10 +42,10 @@ const TeamSection = () => {
   return (
     <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-48 lg:px-8">
       <div className="mx-auto max-w-2xl lg:mx-0">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-primary">
           Meet Our Team
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
+        <p className="mt-6 text-lg leading-8 ">
           We are a team of passionate professionals dedicated to making sports
           facilities more accessible. Our combined experience in technology,
           marketing, and customer success drives our mission to connect athletes
@@ -62,12 +61,12 @@ const TeamSection = () => {
             <img
               alt={`${person.name} - ${person.role}`}
               src={person.imageUrl}
-              className="mx-auto h-24 w-24 rounded-full"
+              className="mx-auto h-24 w-24 rounded-full object-cover border-2 border-primary"
             />
-            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
+            <h3 className="mt-4 text-base font-semibold leading-7 tracking-tight text-primary">
               {person.name}
             </h3>
-            <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+            <p className="text-sm leading-6 ">{person.role}</p>
           </li>
         ))}
       </ul>

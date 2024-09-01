@@ -1,8 +1,8 @@
-import brandImg1 from "../../assets/img/brand/Brand (1).svg"
-import brandImg2 from "../../assets/img/brand/Brand (2).svg"
-import brandImg3 from "../../assets/img/brand/Brand (3).svg"
-import brandImg4 from "../../assets/img/brand/Brand (4).svg"
-import brandImg5 from "../../assets/img/brand/Brand (5).svg"
+import brandImg1 from "../../assets/img/brand/Brand (1).svg";
+import brandImg2 from "../../assets/img/brand/Brand (2).svg";
+import brandImg3 from "../../assets/img/brand/Brand (3).svg";
+import brandImg4 from "../../assets/img/brand/Brand (4).svg";
+import brandImg5 from "../../assets/img/brand/Brand (5).svg";
 
 const Brands = () => {
   return (
