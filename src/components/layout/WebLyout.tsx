@@ -66,7 +66,7 @@ const WebLyout = () => {
         <ScrollToTopButton />
       </Content>
       <Footer style={{ textAlign: "center", padding: "12px 24px" }}>
-        <div className="flex gap-10 justify-center items-center">
+        <div className="flex gap-10 justify-center items-center flex-wrap">
           <p>SRSIHAB Solutions ©{new Date().getFullYear()} Created by SRSIHAB</p>
           <div className="footer_menu flex justify-center items-center gap-5 ">
             <Link className="capitalize font-semibold" to="/about">About</Link>
