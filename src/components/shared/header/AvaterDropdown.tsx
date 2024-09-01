@@ -44,7 +44,7 @@ const AvaterDropdown: React.FC = () => {
           >
             <img
               onClick={() => setOpen(!open)}
-              className="w-10 h-10 cursor-pointer  p-1 rounded-full ring-2 ring-gray-300 "
+              className="w-12 h-12 cursor-pointer  p-1 rounded-full ring-2 ring-gray-300 "
               // show  a loader demo image path
               src={
                 isLoading
