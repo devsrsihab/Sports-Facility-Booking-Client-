@@ -29,7 +29,7 @@ const Login = () => {
         toast.success("Account Login Successfully", { id: loader });
         navigation("/");
       }
-    } catch (error:any) {
+    } catch (error: any) {
       console.log(error);
       toast.error(error.data.message, { id: loader });
     }
@@ -54,10 +54,7 @@ const Login = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <PHForm
-            defaultValues={{ email: "user@gmail.com", password: "123456789" }}
-            onSubmit={onSubmit}
-          >
+          <PHForm onSubmit={onSubmit}>
             <Row gutter={12} justify={"center"} align={"middle"}>
               <Col span={24}>
                 <PHInput label="Email" name="email" type="text" />
