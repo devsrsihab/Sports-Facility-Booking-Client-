@@ -51,7 +51,7 @@ export const webPaths = [
     path: "/booking/:id",
     element: (
       <AutoScrollToTop>
-        <ProtectedRoute roles={["user", "admin"]}>
+        <ProtectedRoute >
           <Booking />
         </ProtectedRoute>
       </AutoScrollToTop>

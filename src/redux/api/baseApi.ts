@@ -51,10 +51,14 @@ const baseQueryWithReferenceToken: BaseQueryFn<
       {
         method: "POST",
         credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
 
     const { data } = await res.json();
+    console.log(data);
     if (data?.accessToken) {
       const user = (api.getState() as RootState).auth.user;
       api.dispatch(setuser({ user, token: data?.accessToken }));
