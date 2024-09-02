@@ -10,30 +10,25 @@ import { verifyToken } from "../../utils/verifyToken";
 
 type TProtectedRouteProps = {
   children: ReactNode;
-  role: string | undefined;
+  roles: string[]; // Array of allowed roles
 };
 
-const ProtectedRoute = ({ children, role }: TProtectedRouteProps) => {
+const ProtectedRoute = ({ children, roles }: TProtectedRouteProps) => {
   const token = useAppSelector(currentToken);
-  let user;
+  let user: TUser | null = null;
 
   if (token) {
-    user = verifyToken(token);
+    user = verifyToken(token) as TUser;
   }
 
-  // distpatch for user logout
-  const distpatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
-  // if user tyr to access without role route
-  if (role !== undefined && role !== (user as TUser)?.role) {
-    distpatch(logout());
+  // If token not found or user role is not allowed
+  if (!token || (user && !roles.includes(user.role))) {
+    dispatch(logout());
     return <Navigate to="/auth/login" replace={true} />;
   }
 
-  // if token not found
-  if (!token) {
-    return <Navigate to="/auth/login" replace={true} />;
-  }
   return children;
 };
 

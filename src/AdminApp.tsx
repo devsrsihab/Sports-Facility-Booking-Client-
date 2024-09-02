@@ -4,7 +4,7 @@ import ProtectedRoute from "./components/layout/ProtectedRoute";
 function AdminApp() {
   return (
     <>
-      <ProtectedRoute>
+      <ProtectedRoute roles={["admin"]}>
         <AdminLayout />
       </ProtectedRoute>
     </>
