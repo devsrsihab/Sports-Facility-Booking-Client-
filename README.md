@@ -1,4 +1,4 @@
-<div align="center">
+<div >
   <h1>Sports Facility Booking Web App</h1>
   <p>A React, TypeScript, and Redux-powered application for seamless sports facility bookings.</p>
   <img src="https://res.cloudinary.com/dzkmp0xxd/image/upload/v1725282900/Screenshot_1_n818i6.png" alt="Sports Facility Booking Web App" width="600" />
