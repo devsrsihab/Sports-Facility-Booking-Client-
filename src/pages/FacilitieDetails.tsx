@@ -42,7 +42,7 @@ const FacilitieDetails = () => {
                 <div className="mt-8">
                   <Link
                     to={`/booking/${facilitie._id}`}
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-3 px-8 text-base font-medium text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-3 px-8 text-base font-medium text-white focus:outline-none focus:ring-2focus:ring-offset-2"
                   >
                     Book Now
                   </Link>
